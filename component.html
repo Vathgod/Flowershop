@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="relative h-[750px] maxWidth">
+      <!-- Background image on top -->
+      <div
+        class="absolute inset-0 bg-cover bg-center z-50"
+        style="
+          background-image: url('pic/Nobg.png');
+          background-position: 0% 5%;
+          background-size: cover;
+        "
+      ></div>
+
+      <!-- Overlay content BELOW the background image -->
+      <div class="relative z-40 bgall pt-32 w-full bg-red-300 bg-opacity-90">
+        <header class="maxWidth sticky top-0 z-30">
+          <div class="flex justify-center gap-96 items-center">
+            <h1 class="text-2xl font-bold text-pink-600">Blossom Garden</h1>
+            <nav class="space-x-4">
+              <a href="index.html" class="text-pink-600 hover:underline"
+                >Home</a
+              >
+              <a href="#" class="hover:underline font-medium text-pink-600"
+                >Shop</a
+              >
+              <a href="cart.html" class="hover:underline">🛒Cart</a>
+              <a href="#" class="hover:underline">Contact</a>
+            </nav>
+          </div>
+        </header>
+
+        <div class="tex flex flex-col gap-7">
+          <h1 class="text-4xl text-center font-bold text-pink-600">
+            Shop Our Flowers
+          </h1>
+          <p class="text-center font-medium text-pink-600 leading-tight">
+            VATH Flowers offers a curated collection of exquisite blooms from
+            Cambodia and around the world.<br />
+            From traditional Khmer flowers to elegant Japanese varieties,<br />
+            we bring beauty and meaning to every occasion.
+          </p>
+        </div>
+
+        <nav class="shadow sticky top-80 z-30 maxWidth">
+          <div
+            class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-6"
+          >
+            <a
+              href="test1.html"
+              class="text-sm font-medium text-blue-700 hover:text-blue-700"
+              >All</a
+            >
+            <a
+              href="flowerType/khmer.html"
+              class="text-sm font-medium text-gray-700 hover:text-blue-700"
+              >Khmer Flowers</a
+            >
+            <a
+              href="flowerType/eu.html"
+              class="text-sm font-medium text-gray-700 hover:text-blue-700"
+              >European Flowers</a
+            >
+            <a
+              href="flowerType/asia.html"
+              class="text-sm font-medium text-gray-700 hover:text-blue-700"
+              >Asian Flowers</a
+            >
+            <a
+              href="flowerType/japan.html"
+              class="text-sm font-medium text-gray-700 hover:text-blue-700"
+              >Japanese Flowers</a
+            >
+          </div>
+        </nav>
+      </div>
+    </section>
+  </body>
+</html>

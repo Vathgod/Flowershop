@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip Same UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .maxWidth {
+        max-width: 1920px;
+        margin: 0 auto;
+      }
+
+      .card {
+        perspective: 1000px;
+        width: 10%;
+        height: 100%;
+      }
+
+      .card-inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+
+      .card.flipped .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background-size: 1000% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .card-back {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="bg-red-700 h-[600px] maxWidth p-10 flex gap-5">
+      <div class="rightCard bg-blue-500 w-[18%] h-full"></div>
+
+      <div class="midCard w-[40%] h-full bg-yellow-400 flex flex-col gap-2">
+        <div class="topm h-[50%] bg-blue-500 flex gap-2">
+          <div class="topml bg-red-500 w-[50%] h-[100%]"></div>
+          <div class="topmr bg-red-950 w-[50%] h-[100%]"></div>
+        </div>
+        <div class="botm bg-green-500 h-[50%] w-full"></div>
+      </div>
+
+      <div class="midCard w-[40%] h-full bg-yellow-400 flex flex-col gap-2">
+        <div class="botm bg-green-500 h-[50%] w-full"></div>
+        <div
+          class="topm h-[50%] bg-white flex gap-[1px]"
+          id="flipContainer"
+        ></div>
+      </div>
+    </section>
+
+    <script>
+      const container = document.getElementById("flipContainer");
+      const numCards = 10;
+      const flipDelay = 500;
+      const imageUrl = "pic/peony.jpg";
+
+      const cards = [];
+
+      for (let i = 0; i < numCards; i++) {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const cardInner = document.createElement("div");
+        cardInner.className = "card-inner";
+
+        const pos = `${(i * 100) / (numCards - 1)}% 0%`;
+
+        const front = document.createElement("div");
+        front.className = "card-front";
+        front.style.backgroundImage = `url('${imageUrl}')`;
+        front.style.backgroundPosition = pos;
+        front.style.backgroundSize = `${numCards * 100}% 100%`;
+
+        const back = document.createElement("div");
+        back.className = "card-back";
+        back.style.backgroundImage = `url('${imageUrl}')`;
+        back.style.backgroundPosition = pos;
+        back.style.backgroundSize = `${numCards * 100}% 100%`;
+
+        cardInner.appendChild(front);
+        cardInner.appendChild(back);
+        card.appendChild(cardInner);
+        container.appendChild(card);
+        cards.push(card);
+      }
+
+      let current = 0;
+
+      function flipNextCard() {
+        cards[current].classList.add("flipped");
+        current++;
+
+        if (current < cards.length) {
+          setTimeout(flipNextCard, flipDelay);
+        } else {
+          // Reset all cards after a delay
+          setTimeout(() => {
+            cards.forEach((card) => card.classList.remove("flipped"));
+            current = 0;
+            setTimeout(flipNextCard, flipDelay);
+          }, 2000); // delay before repeating
+        }
+      }
+
+      flipNextCard();
+    </script>
+  </body>
+</html>

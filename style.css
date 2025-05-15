@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.maxWidth {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+@keyframes scaleOnly {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-piece {
+  animation: scaleOnly 2.5s ease-in-out infinite;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .underline-custom {
+        text-decoration-color: #1d4ed8; /* Tailwind's blue-700 */
+      }
+    </style>
+  </head>
+  <body class="text-gray-800 maxWidth bg-pink-200">
+    <!-- Hero Section -->
+    <section
+      class="bg-cover bg-center h-80 flex flex-col gap-10 items-center justify-center sticky top-0 z-50 maxWidth"
+      style="
+        background-image: url('pic/gar2.png');
+        background-size: cover;
+        background-position: 0% 45%;
+        height: 400px;
+      "
+    >
+      <header class="maxWidth sticky top-0 z-50 mt-20">
+        <div class="flex justify-center gap-52 items-center">
+          <h1 class="text-2xl font-bold text-pink-600">Blossom Garden</h1>
+          <nav class="space-x-4">
+            <a href="index.html" class="text-pink-600 hover:underline">Home</a>
+            <a href="shop.html" class="text-pink-600 hover:underline">Shop</a>
+            <a
+              href="cart.html"
+              class="hover:underline font-medium underline text-pink-600"
+              >Cart</a
+            >
+            <a href="contact.html" class="hover:underline text-pink-600"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </header>
+      <div class="tex flex flex-col gap-7">
+        <h1 class="text-4xl text-center font-bold text-pink-600">Your Cart</h1>
+      </div>
+    </section>
+
+    <!-- Cart Items Section -->
+    <section class="max-w-7xl mx-auto px-4 py-10 space-y-16 maxWidth">
+      <div id="cartItemsContainer">
+        <!-- Cart items will be dynamically injected here -->
+      </div>
+
+      <div class="flex justify-between mt-10">
+        <button
+          class="w-full sm:w-auto bg-pink-600 text-white py-2 px-6 rounded-lg hover:bg-pink-700"
+          onclick="checkout()"
+        >
+          Checkout
+        </button>
+        <p id="totalPrice" class="text-xl font-bold text-gray-700"></p>
+      </div>
+    </section>
+
+    <footer class="bg-pink-200 mt-16 maxWidth">
+      <div
+        class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm text-gray-700"
+      >
+        <!-- About -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-3">About VATH Flowers</h4>
+          <p>
+            We bring you the finest selection of flowers from Cambodia and
+            around the world. Every petal tells a story of love, elegance, and
+            tradition.
+          </p>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-3">Categories</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >Khmer Flowers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >European Flowers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >Asian Flowers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >Japanese Flowers</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-3">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-pink-600 transition">Home</a></li>
+            <li><a href="#" class="hover:text-pink-600 transition">Shop</a></li>
+            <li><a href="#" class="hover:text-pink-600 transition">FAQ</a></li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition">My Account</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-3">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-pink-600 transition">Facebook</a>
+            <a href="#" class="hover:text-pink-600 transition">Instagram</a>
+            <a href="#" class="hover:text-pink-600 transition">TikTok</a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-gray-200 text-center text-sm text-gray-500 py-4"
+      >
+        &copy; 2025 NORVATH Flowers. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      // Function to load cart items from localStorage
+      function loadCart() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartItemsContainer =
+          document.getElementById("cartItemsContainer");
+        const totalPriceElem = document.getElementById("totalPrice");
+        let totalPrice = 0;
+
+        if (cartItems.length === 0) {
+          cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+        } else {
+          cartItemsContainer.innerHTML = ""; // Clear any previous items
+          cartItems.forEach((item) => {
+            const itemElement = document.createElement("div");
+            itemElement.classList.add(
+              "bg-white",
+              "p-4",
+              "rounded-lg",
+              "shadow",
+              "mb-4",
+              "flex",
+              "items-center",
+              "space-x-4",
+              "flex",
+              "gap-52",
+              "justify-between",
+              "item-center"
+            );
+
+            itemElement.innerHTML = `
+              <img src="${item.image}" class="w-40 h-20 object-cover rounded" />
+              <div>
+                <h3 class="font-semibold">${item.name}</h3>
+                <p class="text-sm text-gray-500">$${item.price.toFixed(2)}</p>
+              </div>
+              <button class="ml-auto text-white py-1 px-3 rounded bg-red-600 hover:bg-red-500" onclick="removeFromCart('${
+                item.name
+              }')">
+                Remove
+              </button>
+            `;
+            cartItemsContainer.appendChild(itemElement);
+            totalPrice += item.price;
+          });
+
+          totalPriceElem.innerHTML = `Total: $${totalPrice.toFixed(2)}`;
+        }
+      }
+
+      // Function to remove an item from the cart
+      function removeFromCart(itemName) {
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartItems = cartItems.filter((item) => item.name !== itemName);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        loadCart(); // Reload cart after removal
+      }
+
+      // Checkout function (simple alert for now)
+      function checkout() {
+        alert("Proceeding to checkout...");
+      }
+
+      // Load the cart on page load
+      window.onload = loadCart;
+    </script>
+  </body>
+</html>

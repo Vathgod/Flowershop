@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Blossom Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-800 maxWidth">
+    <div
+      class="bc py-10"
+      style="
+        background-image: url('pic/bg8.jpg');
+        background-size: cover;
+        background-position: 0% 30%;
+        height: auto;
+      "
+    >
+      <!-- Hero Section with Navbar -->
+      <section class="flex flex-col items-center justify-center z-50">
+        <header class="w-full">
+          <div
+            class="max-w-7xl mx-auto flex justify-between items-center py-10 px-10"
+          >
+            <h1 class="text-2xl font-bold text-pink-600">Blossom Garden</h1>
+            <nav class="space-x-6">
+              <a href="index.html" class="text-pink-600 hover:underline"
+                >Home</a
+              >
+              <a href="shop.html" class="text-pink-600 hover:underline">Shop</a>
+              <a href="cart.html" class="text-pink-600 hover:underline">Cart</a>
+              <a
+                href="contact.html"
+                class="text-pink-600 font-semibold underline"
+                >Contact</a
+              >
+            </nav>
+          </div>
+        </header>
+        <div>
+          <h2
+            class="text-4xl font-bold text-pink-600 drop-shadow-lg mb-10 underline underline-offset-4"
+          >
+            Contact Us
+          </h2>
+        </div>
+      </section>
+
+      <!-- Flower Questions Section -->
+
+      <!-- Contact Form -->
+      <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="max-w-2xl mx-auto bg-[#ffffff30] p-8 rounded-lg shadow-md space-y-6"
+        >
+          <!-- Hidden Web3Forms Fields -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="ce504d1a-a769-4fb2-8b15-ceef172b8d5d"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="New Contact Form Submission from Web3Forms"
+          />
+          <input type="hidden" name="from_name" value="My Flower Website" />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-pink-700 font-medium"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+                class="mt-1 w-full rounded-xl border border-pink-300 px-4 py-3 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-pink-700 font-medium"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Your email"
+                class="mt-1 w-full rounded-xl border border-pink-300 px-4 py-3 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="phone" class="block text-pink-700 font-medium"
+                >Phone</label
+              >
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="+855 697 468 56"
+                class="mt-1 w-full rounded-xl border border-pink-300 px-4 py-3 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="message" class="block text-pink-700 font-medium"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                placeholder="Your message"
+                class="mt-1 w-full rounded-xl border border-pink-300 px-4 py-3 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-3 rounded-xl shadow-md transition"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <div
+      class="border-t bg-pink-500 border-gray-200 text-center text-sm text-white py-4"
+    >
+      &copy; 2025 Blossom Garden. All rights reserved.
+    </div>
+  </body>
+</html>
+
+<!-- 
+ <script>
+      function showThankYou(event) {
+        event.preventDefault();
+        document.getElementById("thankYouMessage").classList.remove("hidden");
+        return false;
+      }
+    </script> -->
