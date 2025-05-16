@@ -15,34 +15,34 @@
   <body class="text-gray-800 maxWidth bg-pink-200">
     <!-- Hero Section -->
     <section
-      class="bg-cover bg-center h-80 flex flex-col gap-10 items-center justify-center sticky top-0 z-50 maxWidth"
+      class="bg-cover bg-center flex h-[100px] sm:h-[400px] flex-col gap-10 items-center justify-center sticky top-0 z-50 maxWidth"
       style="
         background-image: url('pic/gar2.png');
         background-size: cover;
         background-position: 0% 45%;
-        height: 400px;
+        /* height: 400px; */
       "
     >
-      <header class="maxWidth sticky top-0 z-50 mt-20">
-        <div class="flex justify-center gap-52 items-center">
-          <h1 class="text-2xl font-bold text-pink-600">Blossom Garden</h1>
-          <nav class="space-x-4">
-            <a href="index.html" class="text-pink-600 hover:underline">Home</a>
-            <a href="shop.html" class="text-pink-600 hover:underline">Shop</a>
-            <a
-              href="cart.html"
-              class="hover:underline font-medium underline text-pink-600"
+      <header class="maxWidth sticky top-0 z-50 mt-10 sm:mt-20">
+        <div
+          class="flex justify-center sm:gap-96 mb-5 sm:mb-20 gap-10 items-center text-pink-600"
+        >
+          <h1 class="sm:text-2xl text-sm font-bold">Blossom Garden</h1>
+          <nav class="sm:space-x-4 space-x-1 sm:text-sm text-[8px]">
+            <a href="../index.html" class="hover:underline">Home</a>
+            <a href="shop.html" class="hover:underline font-medium">Shop</a>
+            <a href="../cart.html" class="hover:underline text-yellow-300"
               >Cart</a
             >
-            <a href="contact.html" class="hover:underline text-pink-600"
-              >Contact</a
-            >
+            <a href="../contact.html" class="hover:underline">Contact</a>
           </nav>
         </div>
+        <div class="tex flex flex-col gap-7">
+          <h1 class="sm:text-4xl text-sm text-center font-bold text-pink-600">
+            Your Cart
+          </h1>
+        </div>
       </header>
-      <div class="tex flex flex-col gap-7">
-        <h1 class="text-4xl text-center font-bold text-pink-600">Your Cart</h1>
-      </div>
     </section>
 
     <!-- Cart Items Section -->
@@ -53,33 +53,39 @@
 
       <div class="flex justify-between mt-10">
         <button
-          class="w-full sm:w-auto bg-pink-600 text-white py-2 px-6 rounded-lg hover:bg-pink-700"
+          class="sm:w-auto bg-pink-600 px-5 py-2 text-white sm:py-2 sm:px-6 rounded-sm sm:rounded-lg hover:bg-pink-700"
           onclick="checkout()"
         >
           Checkout
         </button>
-        <p id="totalPrice" class="text-xl font-bold text-gray-700"></p>
+        <p
+          id="totalPrice"
+          class="sm:text-xl text-[13px] font-bold text-gray-700"
+        ></p>
       </div>
     </section>
 
-    <footer class="bg-pink-200 mt-16 maxWidth">
+    <footer
+      class="z-50 mt-16 maxWidth sticky bottom-0 sm:relative border-t-[.5px] max-w-[1000px] border-white"
+    >
       <div
-        class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm text-gray-700"
+        class="sm:max-w-7xl mx-auto px-4 sm:py-10 grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:text-sm text-[10px] text-white z-50"
       >
         <!-- About -->
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-3">About VATH Flowers</h4>
-          <p>
+        <div class="z-50">
+          <h4 class="font-semibold text-pink-600 mb-3">About VATH Flowers</h4>
+          <p class="leading-[1.1] sm:leading-[1.5] hidden sm:block">
             We bring you the finest selection of flowers from Cambodia and
             around the world. Every petal tells a story of love, elegance, and
             tradition.
           </p>
+          <p class="block sm:hidden text-[8px]">Bring back your Fav flower</p>
         </div>
 
         <!-- Categories -->
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-3">Categories</h4>
-          <ul class="space-y-2">
+        <div class="cursor-pointer">
+          <h4 class="font-semibold text-pink-600 mb-3">Categories</h4>
+          <ul class=" ">
             <li>
               <a href="#" class="hover:text-pink-600 transition"
                 >Khmer Flowers</a
@@ -105,8 +111,8 @@
 
         <!-- Useful Links -->
         <div>
-          <h4 class="font-semibold text-gray-900 mb-3">Quick Links</h4>
-          <ul class="space-y-2">
+          <h4 class="font-semibold text-pink-600 mb-3">Quick Links</h4>
+          <ul class=" ">
             <li><a href="#" class="hover:text-pink-600 transition">Home</a></li>
             <li><a href="#" class="hover:text-pink-600 transition">Shop</a></li>
             <li><a href="#" class="hover:text-pink-600 transition">FAQ</a></li>
@@ -118,17 +124,16 @@
 
         <!-- Social -->
         <div>
-          <h4 class="font-semibold text-gray-900 mb-3">Follow Us</h4>
-          <div class="flex space-x-4">
+          <h4 class="font-semibold text-pink-600 mb-3">Follow Us</h4>
+          <div class="flex flex-col sm:flex-row space-x-1 sm:space-x-4">
             <a href="#" class="hover:text-pink-600 transition">Facebook</a>
             <a href="#" class="hover:text-pink-600 transition">Instagram</a>
             <a href="#" class="hover:text-pink-600 transition">TikTok</a>
           </div>
         </div>
       </div>
-
       <div
-        class="border-t border-gray-200 text-center text-sm text-gray-500 py-4"
+        class="border-t border-gray-200 text-center text-[8px] sm:text-sm text-gray-500 py-1 sm:py-4"
       >
         &copy; 2025 NORVATH Flowers. All rights reserved.
       </div>
@@ -159,18 +164,24 @@
               "items-center",
               "space-x-4",
               "flex",
-              "gap-52",
+              "sm:gap-52",
               "justify-between",
               "item-center"
             );
 
             itemElement.innerHTML = `
-              <img src="${item.image}" class="w-40 h-20 object-cover rounded" />
+              <img src="${
+                item.image
+              }" class="sm:w-40 sm:h-20 w-20 h-10 object-cover rounded" />
               <div>
-                <h3 class="font-semibold">${item.name}</h3>
-                <p class="text-sm text-gray-500">$${item.price.toFixed(2)}</p>
+                <h3 class=" sm:text-md text-[10px] font-semibold">${
+                  item.name
+                }</h3>
+                <p class="sm:text-sm text-[10px] text-gray-500">$${item.price.toFixed(
+                  2
+                )}</p>
               </div>
-              <button class="ml-auto text-white py-1 px-3 rounded bg-red-600 hover:bg-red-500" onclick="removeFromCart('${
+              <button class="ml-auto text-white sm:text-sm text-[10px] py-1 px-3 rounded bg-red-600 hover:bg-red-500" onclick="removeFromCart('${
                 item.name
               }')">
                 Remove
