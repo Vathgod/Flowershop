@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asian Flower</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .underline-custom {
+        text-decoration-color: #1d4ed8; /* Tailwind's blue-700 */
+      }
+    </style>
+  </head>
+  <body
+    class="text-gray-800 bg-gradient-to-b from-violet-950 to-violet-700/50 z-50 maxWidth"
+  >
+    <!-- Hero Section -->
+    <section
+      class="flex flex-col h-[150px] gap-10 items-center justify-start sticky top-0 z-40 sm:h-[450px] bg-cover bg-center maxWidth"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url('../pic/wed.jpg');
+        background-position: 0% 10%;
+        background-size: cover;
+      "
+    >
+      <div class="bgall sticky top-0 z-10 pt-5 sm:pt-32 w-full">
+        <header class="maxWidth sticky top-0 z-10">
+          <div
+            class="flex justify-center sm:gap-96 gap-10 items-center text-white"
+          >
+            <h1 class="sm:text-2xl text-sm font-bold">Blossom Garden</h1>
+            <nav class="sm:space-x-4 space-x-1 sm:text-sm text-[8px]">
+              <a href="../index.html" class="hover:underline">Home</a>
+              <a href="#" class="hover:underline font-medium text-yellow-300"
+                >Shop</a
+              >
+              <a href="../cart.html" class="hover:underline">Cart</a>
+              <a href="../contact.html" class="hover:underline">Contact</a>
+            </nav>
+          </div>
+        </header>
+        <div class="tex flex flex-col gap-7 text-white">
+          <h1 class="sm:text-4xl text-sm text-center font-bold">
+            Shop Our Flowers
+          </h1>
+          <p
+            class="text-center sm:text-sm text-[8px] font-medium leading-tight"
+          >
+            VATH Flowers offers a curated collection of exquisite blooms from
+            Cambodia and around the world.<br />
+            From traditional Khmer flowers to elegant Japanese varieties,<br />
+            we bring beauty and meaning to every occasion.
+          </p>
+        </div>
+        <nav class="sticky top-80 z-10 sm:mt-5 maxWidth">
+          <div
+            class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-3 sm:gap-6"
+          >
+            <a
+              href="../shop.html"
+              class="sm:text-sm text-[8px] font-medium text-white hover:text-pink-600"
+              >All</a
+            >
+            <a
+              href="khmer.html"
+              class="sm:text-sm text-[8px] font-medium text-white hover:text-pink-600"
+              >Khmer Flowers</a
+            >
+            <a
+              href="eu.html"
+              class="sm:text-sm text-[8px] font-medium text-white hover:text-pink-600"
+              >European Flowers</a
+            >
+            <a
+              href="asia.html"
+              class="sm:text-sm text-[8px] font-medium text-yellow-300 hover:text-pink-600"
+              >Asian Flowers</a
+            >
+            <a
+              href="japan.html"
+              class="sm:text-sm text-[8px] font-medium text-white hover:text-pink-600"
+              >Japanese Flowers</a
+            >
+          </div>
+        </nav>
+      </div>
+
+      <!-- main  -->
+    </section>
+
+    <!-- Flower Type Navigation -->
+
+    <!-- Flower Sections -->
+    <section class="max-w-7xl maxWidth z-40">
+      <!-- All Flowers -->
+      <div class="flex flex-col justify-center items-center sm:gap-7 z-40">
+        <h2
+          class="sm:text-2xl text-white font-bold mt-5 sm:mb-6 text-center underline underline-offset-4 underline-custom"
+        >
+          All Asian flowers
+        </h2>
+        <div
+          class="grid grid-cols-2 p-5 sm:grid-cols-3 md:grid-cols-4 gap-5 z-30"
+        >
+          <!-- Product Card -->
+          <div
+            class="bg-white sm:w-52 sm:h-72 w-44 sm:p-4 p-3 h-56 rounded-lg shadow hover:shadow-xl flex flex-col"
+            data-name="aa1"
+            data-price="20.00"
+            data-image="pic/aa1.jpg"
+          >
+            <img
+              src="../pic/aa1.jpg"
+              class="w-full sm:h-32 h-24 object-cover rounded"
+            />
+            <h3 class="mt-2 font-semibold text-sm text-md">Romduol Bunch</h3>
+            <p class="sm:text-sm text-[10px] text-gray-500">
+              Cambodia's national flower
+            </p>
+            <p class="text-pink-600 sm:text-sm text-[10px] font-bold mt-1">
+              $20.00
+            </p>
+
+            <!-- Add to Cart Button Only -->
+            <div class="mt-4">
+              <button
+                class="w-full border text-sm bg-pink-600 border-pink-600 text-white py-1 rounded hover:bg-pink-700 transition"
+                onclick="addToCart(this)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white sm:w-52 sm:h-72 w-44 sm:p-4 p-3 h-56 rounded-lg shadow hover:shadow-xl flex flex-col"
+            data-name="aa2"
+            data-price="20.00"
+            data-image="pic/aa2.jpg"
+          >
+            <img
+              src="../pic/aa2.jpg"
+              class="w-full sm:h-32 h-24 object-cover rounded"
+            />
+            <h3 class="mt-2 font-semibold text-sm text-md">Romduol Bunch</h3>
+            <p class="sm:text-sm text-[10px] text-gray-500">
+              Cambodia's national flower
+            </p>
+            <p class="text-pink-600 sm:text-sm text-[10px] font-bold mt-1">
+              $20.00
+            </p>
+
+            <!-- Add to Cart Button Only -->
+            <div class="mt-4">
+              <button
+                class="w-full border text-sm bg-pink-600 border-pink-600 text-white py-1 rounded hover:bg-pink-700 transition"
+                onclick="addToCart(this)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white sm:w-52 sm:h-72 w-44 sm:p-4 p-3 h-56 rounded-lg shadow hover:shadow-xl flex flex-col"
+            data-name="aa3"
+            data-price="20.00"
+            data-image="pic/aa3.jpg"
+          >
+            <img
+              src="../pic/aa3.jpg"
+              class="w-full sm:h-32 h-24 object-cover rounded"
+            />
+            <h3 class="mt-2 font-semibold text-sm text-md">Romduol Bunch</h3>
+            <p class="sm:text-sm text-[10px] text-gray-500">
+              Cambodia's national flower
+            </p>
+            <p class="text-pink-600 sm:text-sm text-[10px] font-bold mt-1">
+              $20.00
+            </p>
+
+            <!-- Add to Cart Button Only -->
+            <div class="mt-4">
+              <button
+                class="w-full border text-sm bg-pink-600 border-pink-600 text-white py-1 rounded hover:bg-pink-700 transition"
+                onclick="addToCart(this)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white sm:w-52 sm:h-72 w-44 sm:p-4 p-3 h-56 rounded-lg shadow hover:shadow-xl flex flex-col"
+            data-name="Romduol"
+            data-price="20.00"
+            data-image="pic/peony.jpg"
+          >
+            <img
+              src="../pic/peony.jpg"
+              class="w-full sm:h-32 h-24 object-cover rounded"
+            />
+            <h3 class="mt-2 font-semibold text-sm text-md">Romduol Bunch</h3>
+            <p class="sm:text-sm text-[10px] text-gray-500">
+              Cambodia's national flower
+            </p>
+            <p class="text-pink-600 sm:text-sm text-[10px] font-bold mt-1">
+              $20.00
+            </p>
+
+            <!-- Add to Cart Button Only -->
+            <div class="mt-4">
+              <button
+                class="w-full border text-sm bg-pink-600 border-pink-600 text-white py-1 rounded hover:bg-pink-700 transition"
+                onclick="addToCart(this)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white sm:w-52 sm:h-72 w-44 sm:p-4 p-3 h-56 rounded-lg shadow hover:shadow-xl flex flex-col"
+            data-name="aa4"
+            data-price="20.00"
+            data-image="../pic/jj2.jpeg"
+          >
+            <img
+              src="../pic/jj2.jpeg"
+              class="w-full sm:h-32 h-24 object-cover rounded"
+            />
+            <h3 class="mt-2 font-semibold text-sm text-md">Romduol Bunch</h3>
+            <p class="sm:text-sm text-[10px] text-gray-500">
+              Cambodia's national flower
+            </p>
+            <p class="text-pink-600 sm:text-sm text-[10px] font-bold mt-1">
+              $20.00
+            </p>
+
+            <!-- Add to Cart Button Only -->
+            <div class="mt-4">
+              <button
+                class="w-full border text-sm bg-pink-600 border-pink-600 text-white py-1 rounded hover:bg-pink-700 transition"
+                onclick="addToCart(this)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white sm:w-52 sm:h-72 w-44 sm:p-4 p-3 h-56 rounded-lg shadow hover:shadow-xl flex flex-col"
+            data-name="aa5"
+            data-price="20.00"
+            data-image="../pic/kk4.jpg"
+          >
+            <img
+              src="../pic/kk4.jpg"
+              class="w-full sm:h-32 h-24 object-cover rounded"
+            />
+            <h3 class="mt-2 font-semibold text-sm text-md">Romduol Bunch</h3>
+            <p class="sm:text-sm text-[10px] text-gray-500">
+              Cambodia's national flower
+            </p>
+            <p class="text-pink-600 sm:text-sm text-[10px] font-bold mt-1">
+              $20.00
+            </p>
+
+            <!-- Add to Cart Button Only -->
+            <div class="mt-4">
+              <button
+                class="w-full border text-sm bg-pink-600 border-pink-600 text-white py-1 rounded hover:bg-pink-700 transition"
+                onclick="addToCart(this)"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Repeat this block for each flower -->
+
+          <!-- Add more cards here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="z-50 mt-16 maxWidth relative border-t-[.5px] max-w-[1000px] border-white"
+    >
+      <div
+        class="sm:max-w-7xl mx-auto px-4 sm:py-10 grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:text-sm text-[10px] text-white z-50"
+      >
+        <!-- About -->
+        <div class="z-50">
+          <h4 class="font-semibold text-pink-600 mb-3">
+            About VATHDAFAQ Flowers
+          </h4>
+          <p class="leading-[1.1] sm:leading-[1.5] hidden sm:block">
+            We bring you the finest selection of flowers from Cambodia and
+            around the world. Every petal tells a story of love, elegance, and
+            tradition.
+          </p>
+          <p class="block sm:hidden text-[8px]">Bring back your Fav flower</p>
+        </div>
+
+        <!-- Categories -->
+        <div class="cursor-pointer">
+          <h4 class="font-semibold text-pink-600 mb-3">Categories</h4>
+          <ul class=" ">
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >Khmer Flowers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >European Flowers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >Asian Flowers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition"
+                >Japanese Flowers</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div>
+          <h4 class="font-semibold text-pink-600 mb-3">Quick Links</h4>
+          <ul class=" ">
+            <li><a href="#" class="hover:text-pink-600 transition">Home</a></li>
+            <li><a href="#" class="hover:text-pink-600 transition">Shop</a></li>
+            <li><a href="#" class="hover:text-pink-600 transition">FAQ</a></li>
+            <li>
+              <a href="#" class="hover:text-pink-600 transition">My Account</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h4 class="font-semibold text-pink-600 mb-3">Follow Us</h4>
+          <div class="flex flex-col sm:flex-row space-x-1 sm:space-x-4">
+            <a href="#" class="hover:text-pink-600 transition">Facebook</a>
+            <a href="#" class="hover:text-pink-600 transition">Instagram</a>
+            <a href="#" class="hover:text-pink-600 transition">TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-gray-200 text-center text-[8px] sm:text-sm text-gray-500 py-1 sm:py-4"
+      >
+        &copy; 2025 VATHDAFAQ Flowers. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      function addToCart(button) {
+        const card = button.closest("div[data-name]");
+        const product = {
+          name: card.dataset.name,
+          price: parseFloat(card.dataset.price),
+          image: card.dataset.image,
+        };
+
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartItems.push(product);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        alert(`${product.name} added to cart!`);
+      }
+    </script>
+  </body>
+</html>
