@@ -1,30 +1,15 @@
-let day = 7;
-switch (day) {
-  case 1:
-    console.log("Monday");
-    break;
-  case 2:
-    console.log("Tuesday");
-    break;
-  case 3:
-    console.log("Wednesday");
-    break;
-  case 4:
-    console.log("Thursday");
-    break;
-  case 5:
-    console.log("Friday");
-    break;
-  case 6:
-    console.log("Saturday");
-    break;
-  case 7:
-    console.log("Sunday");
-    break;
-  default:
-    console.log("Invalid day");
-    break;
-}
+// EX1
+// const prices = [10, 20, 30, 40];
+// const increasePrice = prices.map((price) => (price * 110) / 100);
+// console.log(increasePrice);
 
+// EX2
+// const scores = [80, 45, 90, 60, 30];
+// const evenNUmber = scores.filter((score) => score >= 60);
+// console.log(evenNUmber);
 
-
+// EX3
+const names = ["Sereyvath", "Norphear", "Bopha"];
+names.forEach((name) => {
+  console.log("hello " + name + "have a nice day");
+});

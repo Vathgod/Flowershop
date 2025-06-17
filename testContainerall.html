@@ -3,78 +3,332 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>European Flowers | Blossom Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom styles can be kept here or moved to a separate CSS file */
+      .underline-custom {
+        text-decoration-color: #db2777; /* Tailwind's pink-600 for consistency */
+      }
+      body {
+        background-color: #1e1b4b; /* A deep indigo for a more sophisticated feel */
+      }
+    </style>
   </head>
-  <body>
-    <section class="contact-section">
-      <div class="contact-intro">
-        <h2 class="contact-title">Get in Touch</h2>
-        <p class="contact-description">
-          Fill out the form below and we'll get back to you as soon as possible.
+  <body class="text-gray-200 antialiased">
+    <header
+      class="relative h-[400px] sm:h-[450px] flex flex-col justify-center items-center text-center text-white bg-cover bg-center"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url('../pic/wed.jpg');
+        background-position: 0% 10%;
+      "
+    >
+      <div class="absolute top-0 left-0 right-0 p-4 sm:p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <a
+            href="../index.html"
+            class="text-xl sm:text-2xl font-bold tracking-wider"
+            >Blossom Garden</a
+          >
+          <nav class="flex items-center space-x-3 sm:space-x-6 text-sm">
+            <a
+              href="../index.html"
+              class="hover:text-yellow-300 transition duration-300"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-yellow-300 font-semibold border-b-2 border-yellow-300 pb-1"
+              >Shop</a
+            >
+            <a
+              href="../cart.html"
+              class="hover:text-yellow-300 transition duration-300"
+              >Cart</a
+            >
+            <a
+              href="../contact.html"
+              class="hover:text-yellow-300 transition duration-300"
+              >Contact</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <div class="px-4">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+          Shop Our European Collection
+        </h1>
+        <p class="max-w-2xl mx-auto text-sm sm:text-base text-gray-300">
+          Discover exquisite blooms from across Europe, curated to bring
+          elegance and timeless beauty to any occasion.
         </p>
       </div>
 
-      <form
-        class="contact-form"
-        action="https://api.web3forms.com/submit"
-        method="POST"
+      <nav
+        class="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-20 backdrop-blur-sm"
       >
-        <input
-          type="hidden"
-          name="access_key"
-          value="ce504d1a-a769-4fb2-8b15-ceef172b8d5d"
-        />
-        <input
-          type="hidden"
-          name="subject"
-          value="New Contact Form Submission from Web3Forms"
-        />
-        <input type="hidden" name="from_name" value="My Website" />
-        <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+        <div
+          class="max-w-7xl mx-auto flex flex-wrap justify-center gap-4 sm:gap-8"
+        >
+          <a
+            href="../shop.html"
+            class="text-sm font-medium hover:text-pink-400 transition duration-300"
+            >All</a
+          >
+          <a
+            href="khmer.html"
+            class="text-sm font-medium hover:text-pink-400 transition duration-300"
+            >Khmer</a
+          >
+          <a
+            href="eu.html"
+            class="text-sm font-medium text-yellow-300 hover:text-pink-400 transition duration-300"
+            >European</a
+          >
+          <a
+            href="asia.html"
+            class="text-sm font-medium hover:text-pink-400 transition duration-300"
+            >Asian</a
+          >
+          <a
+            href="japan.html"
+            class="text-sm font-medium hover:text-pink-400 transition duration-300"
+            >Japanese</a
+          >
+        </div>
+      </nav>
+    </header>
 
-        <div class="form-group-container">
-          <div class="form-group">
-            <label for="name" class="form-label">Name</label>
-            <input
-              id="name"
-              name="name"
-              class="form-input"
-              placeholder="Your name"
-              type="text"
-            />
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2
+        class="text-3xl font-bold text-center text-white mb-10 underline underline-offset-8 underline-custom"
+      >
+        All European Flowers
+      </h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden group"
+          data-name="Lily of the Valley"
+          data-price="25.00"
+          data-image="../pic/ee1.avif"
+        >
+          <img
+            src="../pic/ee1.avif"
+            alt="Lily of the Valley"
+            class="w-full h-36 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-4 text-white">
+            <h3 class="text-lg font-semibold">Lily of the Valley</h3>
+            <p class="text-xs text-gray-400 mb-2">
+              A symbol of sweetness and purity.
+            </p>
+            <p class="text-pink-400 text-lg font-bold">$25.00</p>
           </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Email</label>
-            <input
-              id="email"
-              name="email"
-              class="form-input"
-              placeholder="Your email"
-              type="email"
-            />
-          </div>
-          <div class="form-group">
-            <label for="phone" class="form-label">Phone</label>
-            <input
-              id="phone"
-              name="phone"
-              class="form-input"
-              placeholder="+1 (234) 56789"
-              type="text"
-            />
-          </div>
-          <div class="form-group">
-            <label for="message" class="form-label">Message</label>
-            <textarea
-              class="form-textarea"
-              id="message"
-              name="message"
-              placeholder="Your message"
-            ></textarea>
+          <div class="px-4 pb-4">
+            <button
+              class="w-full bg-pink-600 text-white py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm font-semibold"
+              onclick="addToCart(this)"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
-        <button class="form-submit" type="submit">Send Message</button>
-      </form>
-    </section>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden group"
+          data-name="White Rose Bouquet"
+          data-price="30.00"
+          data-image="../pic/ee2.webp"
+        >
+          <img
+            src="../pic/ee2.webp"
+            alt="White Rose Bouquet"
+            class="w-full h-36 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-4 text-white">
+            <h3 class="text-lg font-semibold">White Rose Bouquet</h3>
+            <p class="text-xs text-gray-400 mb-2">
+              Classic elegance for any occasion.
+            </p>
+            <p class="text-pink-400 text-lg font-bold">$30.00</p>
+          </div>
+          <div class="px-4 pb-4">
+            <button
+              class="w-full bg-pink-600 text-white py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm font-semibold"
+              onclick="addToCart(this)"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden group"
+          data-name="Lavender Sprigs"
+          data-price="18.00"
+          data-image="../pic/ee3.jpg"
+        >
+          <img
+            src="../pic/ee3.jpg"
+            alt="Lavender Sprigs"
+            class="w-full h-36 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-4 text-white">
+            <h3 class="text-lg font-semibold">Lavender Sprigs</h3>
+            <p class="text-xs text-gray-400 mb-2">
+              Calming aroma and rustic charm.
+            </p>
+            <p class="text-pink-400 text-lg font-bold">$18.00</p>
+          </div>
+          <div class="px-4 pb-4">
+            <button
+              class="w-full bg-pink-600 text-white py-2 rounded-md hover:bg-pink-700 transition-colors duration-300 text-sm font-semibold"
+              onclick="addToCart(this)"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-gray-900/50 border-t border-gray-700 mt-16">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm"
+      >
+        <div>
+          <h4 class="font-semibold text-pink-400 mb-3 uppercase tracking-wider">
+            About Us
+          </h4>
+          <p class="text-gray-400 leading-relaxed">
+            Bringing you the finest selection of flowers from around the world.
+            Every petal tells a story of love, elegance, and tradition.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-pink-400 mb-3 uppercase tracking-wider">
+            Categories
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="khmer.html"
+                class="text-gray-400 hover:text-white transition"
+                >Khmer Flowers</a
+              >
+            </li>
+            <li>
+              <a
+                href="eu.html"
+                class="text-gray-400 hover:text-white transition"
+                >European Flowers</a
+              >
+            </li>
+            <li>
+              <a
+                href="asia.html"
+                class="text-gray-400 hover:text-white transition"
+                >Asian Flowers</a
+              >
+            </li>
+            <li>
+              <a
+                href="japan.html"
+                class="text-gray-400 hover:text-white transition"
+                >Japanese Flowers</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-pink-400 mb-3 uppercase tracking-wider">
+            Quick Links
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="../index.html"
+                class="text-gray-400 hover:text-white transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="../shop.html"
+                class="text-gray-400 hover:text-white transition"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >My Account</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-pink-400 mb-3 uppercase tracking-wider">
+            Follow Us
+          </h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition"
+              >Facebook</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition"
+              >Instagram</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition"
+              >TikTok</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-900 py-4">
+        <p class="text-center text-xs text-gray-500">
+          &copy; 2025 Blossom Garden. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function addToCart(button) {
+        const card = button.closest(".group"); // Use the main card container
+        const productName = card.dataset.name;
+        const product = {
+          name: productName,
+          price: parseFloat(card.dataset.price),
+          image: card.dataset.image,
+        };
+
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Optional: Check if the item is already in the cart to avoid duplicates
+        const existingItem = cartItems.find(
+          (item) => item.name === productName
+        );
+        if (existingItem) {
+          // You could increase quantity here if you add that feature
+          alert(`${productName} is already in your cart.`);
+        } else {
+          cartItems.push(product);
+          localStorage.setItem("cartItems", JSON.stringify(cartItems));
+          alert(`${productName} has been added to your cart!`);
+        }
+      }
+    </script>
   </body>
 </html>

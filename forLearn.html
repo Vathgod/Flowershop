@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Color Changer</title>
+  </head>
+  <body>
+    <h2>Type a Color to Change Background</h2>
+    <input type="text" id="colorInput" placeholder="Enter color name" />
+    <button id="changeBtn">Change Color</button>
+    <p id="message"></p>
+
+    <script>
+      const btn = document.getElementById("changeBtn");
+
+      btn.addEventListener("click", () => {
+        const color = document
+          .getElementById("colorInput")
+          .value.toLowerCase()
+          .trim();
+
+        const test = document.createElement("div");
+        test.style.color = color;
+        const validColor = test.style.color !== "";
+        const message = document.getElementById("message");
+        if (validColor) {
+          document.body.style.backgroundColor = color;
+          message.innerText = `Background changed to ${color}`;
+          message.style.color = "green";
+        } else {
+          message.innerText = `Invalid color!`;
+          message.style.color = "red";
+          document.body.style.backgroundColor = "white"; // reset
+        }
+        document.getElementById("colorInput").value = "";
+      });
+    </script>
+  </body>
+</html>

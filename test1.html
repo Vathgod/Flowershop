@@ -3,165 +3,500 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop - Flower Store</title>
+    <title>test 1</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/353aaa4da4.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <style>
-      .underline-custom {
-        text-decoration-color: #1d4ed8; /* Tailwind's blue-700 */
+      :root {
+        --bg-cream: #fdfbf8;
+        --text-dark: #333333;
+        --text-light: #555555;
+        --accent-green: #6b8a7a;
+        --accent-green-dark: #5a7d6c;
+        --border-color: #e0e0e0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .maxWidth {
+        max-width: 1920px;
+        margin: 0 auto;
+      }
+      @keyframes scaleOnly {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .animate-piece {
+        animation: scaleOnly 2.5s ease-in-out infinite;
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-pink-50 text-gray-800">
+    <!-- Header -->
+
     <!-- Hero Section -->
     <section
-      class="bg-cover bg-center h-80 flex flex-col gap-32 items-center justify-center sticky top-0 z-50 maxWidth"
+      class="relative sm:h-[500px] h-[100px] maxWidth bg-cover bg-center bg-no-repeat py-20"
       style="background-image: url('pic/peony.jpg')"
     >
-      <header class="maxWidth sticky top-0 z-50">
-        <div class="flex justify-center gap-96 items-center">
-          <h1 class="text-2xl font-bold text-pink-600">Blossom Garden</h1>
-          <nav class="space-x-4">
-            <a href="index.html" class="text-pink-600 hover:underline">Home</a>
-            <a href="#" class="hover:underline font-medium text-pink-600"
-              >Shop</a
-            >
-            <a href="#" class="hover:underline">Contact</a>
-          </nav>
-        </div>
-      </header>
-      <div class="tex flex flex-col gap-7">
-        <h1 class="text-4xl text-center font-bold text-black">
-          Shop Our Flowers
-        </h1>
-        <p class="text-center font-medium text-black leading-tight">
-          VATH Flowers offers a curated collection of exquisite blooms from
-          Cambodia and around the world.<br />
-          From traditional Khmer flowers to elegant Japanese varieties,<br />
-          we bring beauty and meaning to every occasion.
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="relative sm:mt-28 mt-0 z-10 text-center text-white px-4">
+        <h2 class="sm:text-4xl text-lg font-bold mb-3">
+          Welcome to Blossom Garden
+        </h2>
+        <p class="sm:text-lg text-[10px]">
+          Buy beautiful Khmer, Asian, Japanese, and European flowers
         </p>
       </div>
     </section>
-
-    <!-- Flower Type Navigation -->
-    <nav class="bg-white shadow sticky top-80 z-10 maxWidth">
+    <header class="bg-red-400 maxWidth shadow sticky top-0 z-50">
+      <!-- bg-[#5e0f25]  -->
       <div
-        class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-6"
+        class="bg-[#5e0f25] top-0 hiddn z-10 text-white w-full mx-auto px-4 py-4 flex justify-around items-center"
       >
-        <a
-          href="test1.html"
-          class="text-sm font-medium text-blue-700 hover:text-blue-700"
-          >All</a
+        <h1 class="text-2xl font-bold">VATHDAFAQ</h1>
+        <nav class="space-x-4 hidden md:flex">
+          <a href="#" class="text-pink-600 font-medium hover:underline">Home</a>
+          <a href="shop.html" class="hover:underline">Shop</a>
+          <a href="cart.html" class="hover:underline">Cart</a>
+          <a href="contact.html" class="hover:underline">Contact</a>
+        </nav>
+        <div
+          href="contact.htm"
+          onclick="show()"
+          class="hover:underline flex sm:hidden text-white"
         >
-        <a
-          href="flowerType/khmer.html"
-          class="text-sm font-medium text-gray-700 hover:text-blue-700"
-          >Khmer Flowers</a
-        >
-        <a
-          href="flowerType/eu.html"
-          class="text-sm font-medium text-gray-700 hover:text-blue-700"
-          >European Flowers</a
-        >
-        <a
-          href="flowerType/asia.html"
-          class="text-sm font-medium text-gray-700 hover:text-blue-700"
-          >Asian Flowers</a
-        >
-        <a
-          href="flowerType/japan.html"
-          class="text-sm font-medium text-gray-700 hover:text-blue-700"
-          >Japanese Flowers</a
-        >
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
-    </nav>
-
-    <!-- Flower Sections -->
-    <section class="max-w-7xl mx-auto px-4 py-10 space-y-16 maxWidth">
-      <!-- All Flowers -->
-      <div id="khmer">
-        <h2
-          class="text-2xl font-bold mb-6 text-center underline underline-offset-4 underline-custom"
+      <div class="cc flex justify-end">
+        <nav
+          class="flex-col hidden justify-end item-end text-white absolute top-0 gap-5 bg-[#5e0f30] p-10 z-30"
+          id="navPh"
         >
-          All flowers
-        </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          <!-- Product Card -->
-          <div
-            class="bg-white p-4 rounded-lg shadow hover:shadow-xl flex flex-col"
-          >
-            <img src="pic/peony.jpg" class="w-full h-48 object-cover rounded" />
-            <h3 class="mt-2 font-semibold">Romduol Bunch</h3>
-            <p class="text-sm text-gray-500">Cambodia's national flower</p>
-            <p class="text-pink-600 font-bold mt-1">$20.00</p>
+          <a href="# " onclick="hide()" class="ml-10"
+            ><i class="fa-solid fa-xmark"></i
+          ></a>
+          <a href="#" class="text-pink-600 font-medium hover:underline">Home</a>
+          <a href="shop.html" class="hover:underline">Shop</a>
+          <a href="cart.html" class="hover:underline">Cart</a>
+          <a href="contact.html" class="hover:underline">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-            <!-- Buttons -->
-            <div class="mt-4 flex gap-2">
-              <button
-                class="flex-1 bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 transition"
-                onclick="buyNow('White Peonies')"
-              >
-                Buy Now
-              </button>
-              <button
-                class="flex-1 border border-pink-600 text-pink-600 py-2 px-4 rounded hover:bg-pink-50 transition"
-                onclick="addToCart('White Peonies')"
-              >
-                Add to Cart
-              </button>
-            </div>
+    <!-- free style card  -->
+    <section
+      class="bg-[#5e0f10] h-[160px] sm:h-[600px] maxWidth p-3 sm:p-10 flex gap-[1px] sm:gap-1"
+      style="
+        background-image: url('pic/mountainn.jpg');
+        background-size: cover;
+        background-position: 50% 0%;
+      "
+    >
+      <div
+        class="rightCard bg-blue-500 w-[18%] h-full bg-cover flex flex-col justify-end sm:p-5 p-1 bg-no-repeat transition-all duration-300 hover:scale-[1.01]"
+        style="
+          background-image: url('pic/bg7.jpg');
+          background-size: cover;
+          background-position: 50% 0%;
+        "
+      >
+        <h4 class="sm:text-lg text-[5px] font-semibold sm:mt-2">Sakura</h4>
+        <p class="sm:text-sm text-[5px] text-pink-600">Japanese Flower</p>
+        <p class="text-pink-600 text-[5px] sm:text-sm font-bold sm:mt-1">
+          $9.00
+        </p>
+        <a
+          href="shop.html"
+          class="sm:mt-2 text-[5px] sm:text-sm sm:px-3 sm:py-1 sm:max-w-28 max-w-7 bg-pink-500 text-white sm:rounded hover:bg-pink-600"
+        >
+          Go to Shop
+        </a>
+      </div>
+      <div class="midCard w-[40%] h-full flex flex-col gap-[1px] sm:gap-1">
+        <div class="topm h-[50%] flex gap-1">
+          <div
+            class="topml bg-red-500 w-[50%] h-[100%] text-white bg-cover bg-no-repeat flex flex-col justify-end p-1 sm:p-3 transition-all duration-300 hover:scale-[1.02]"
+            style="background-image: url('pic/peo4.jpg')"
+          >
+            <h4 class="sm:text-lg text-[5px] font-semibold mt-2">Sakura</h4>
+            <p class="sm:text-sm text-[5px]">Japanese Flower</p>
+            <p class="font-bold mt-1 text-[5px] sm:text-sm">$9.00</p>
+            <a
+              href="shop.html"
+              class="sm:mt-2 text-[5px] sm:text-sm sm:px-3 sm:py-1 sm:max-w-28 max-w-7 bg-pink-500 text-white sm:rounded hover:bg-pink-600"
+            >
+              Go to Shop
+            </a>
           </div>
+          <div
+            class="topml bg-red-500 w-[50%] h-[100%] text-white bg-cover bg-no-repeat flex flex-col justify-end p-1 sm:p-3 transition-all duration-300 hover:scale-[1.01]"
+            style="background-image: url('pic/peo5.webp')"
+          >
+            <h4 class="sm:text-lg text-[5px] font-semibold mt-2">Peony</h4>
+            <p class="sm:text-sm text-[5px]">Japanese Flower</p>
+            <p class="font-bold sm:mt-1 text-[5px] sm:text-sm">$9.00</p>
+            <a
+              href="shop.html"
+              class="sm:mt-2 text-[5px] sm:text-sm sm:px-3 sm:py-1 sm:max-w-28 max-w-7 bg-pink-500 text-white sm:rounded hover:bg-pink-600"
+            >
+              Go to Shop
+            </a>
+          </div>
+        </div>
+        <div
+          class="botm bg-green-500 h-[50%] w-full bg-cover bg-no-repeat transition-all duration-300 hover:scale-[1.01]"
+          style="
+            background-image: url('pic/peolong.webp');
+            background-size: cover;
+            background-position: 50% 60%;
+          "
+        ></div>
+      </div>
+      <div
+        class="midCard w-[40%] h-full flex flex-col justify-end gap-[1px] sm:gap-2"
+      >
+        <div
+          class="botm bg-green-500 h-[30%] w-full bg-cover bg-no-repeat transition-all duration-300 hover:scale-[1.01]"
+          style="background-image: url('pic/peolong.webp')"
+        ></div>
+        <div
+          class="topm h-[70%] bg-white flex gap-[0.5px] sm:gap-[1px] transition-all duration-300 hover:scale-[1.006]"
+        >
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 0% 0%;
+              animation-delay: 0s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 10% 0%;
+              animation-delay: 0.2s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 20% 0%;
+              animation-delay: 0.4s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 30% 0%;
+              animation-delay: 0.6s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 40% 0%;
+              animation-delay: 0.8s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 50% 0%;
+              animation-delay: 1s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 60% 0%;
+              animation-delay: 1.2s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 70% 0%;
+              animation-delay: 1.4s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 80% 0%;
+              animation-delay: 1.6s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 90% 0%;
+              animation-delay: 1.8s;
+            "
+          ></div>
+          <div
+            class="h-full w-[10%] bg-cover bg-no-repeat animate-piece"
+            style="
+              background-image: url('pic/peony.jpg');
+              background-size: 1100% 100%;
+              background-position: 100% 0%;
+              animation-delay: 2s;
+            "
+          ></div>
         </div>
       </div>
     </section>
-
-    <div class="mt-10 grid md:grid-cols-2 gap-6">
-      <div class="bg-white p-4 rounded-lg shadow-inner">
-        <h2 class="text-xl font-bold text-pink-700 mb-2">🛒 Added to Cart</h2>
-        <ul id="cart-log" class="space-y-1 text-gray-700 text-sm"></ul>
+    <!-- Flower Grid -->
+    <section
+      class="mx-auto px-4 py-8 maxWidth flex flex-col gap-10 bg-[#5e0f25]"
+      style="
+        background-image: url('pic/mountainn.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="text-center mb-12 text-white">
+        <h2 class="font-serif font-semibold text-3xl sm:text-4xl mb-4">
+          Our Floral Services
+        </h2>
+        <p class="sm:text-lg max-w-3xl mx-auto text-base">
+          We pour our heart into every arrangement, ensuring your special
+          moments are adorned with the perfect blooms. Explore our bespoke
+          services tailored for every occasion.
+        </p>
       </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <!-- Service Card 1: Wedding Decoration -->
+        <a
+          class="bg-[#ffffff80] p-4 rounded-lg shadow transition-all duration-300 hover:shadow-xl hover:-rotate-1 hover:scale-[1.02]"
+        >
+          <img
+            src="pic/wed.jpg"
+            alt="Wedding Flower Decoration"
+            class="w-full sm:h-40 h-24 object-cover rounded"
+          />
+          <h4 class="sm:text-lg text-sm font-semibold mt-2">
+            Wedding Flower Decoration
+          </h4>
+          <p class="sm:text-sm text-[10px] text-gray-500">
+            Romduol, Roses, and more
+          </p>
+          <p class="text-gray-700 sm:text-sm text-[10px] mt-1">
+            Elegant floral setups for traditional and modern weddings.
+          </p>
+        </a>
 
-      <div class="bg-white p-4 rounded-lg shadow-inner">
-        <h2 class="text-xl font-bold text-green-700 mb-2">💰 Bought</h2>
-        <ul id="buy-log" class="space-y-1 text-gray-700 text-sm"></ul>
+        <!-- Service Card 2: Event Styling -->
+        <a
+          class="bg-[#ffffff80] p-4 rounded-lg shadow transition-all duration-300 hover:shadow-xl hover:rotate-1 hover:scale-[1.02]"
+        >
+          <img
+            src="pic/event.jpg"
+            alt="Event Floral Styling"
+            class="w-full sm:h-40 h-24 object-cover rounded"
+          />
+          <h4 class="sm:text-lg text-sm font-semibold mt-2">
+            Event Floral Styling
+          </h4>
+          <p class="sm:text-sm text-[10px] text-gray-500">
+            Tulips, Orchids, Lilies
+          </p>
+          <p class="text-gray-700 sm:text-sm text-[10px] mt-1">
+            Perfect for birthdays, ceremonies, and company events.
+          </p>
+        </a>
+
+        <!-- Service Card 3: Custom Bouquets -->
+        <a
+          class="bg-[#ffffff80] p-4 rounded-lg shadow transition-all duration-300 hover:shadow-xl hover:-rotate-1 hover:scale-[1.02]"
+        >
+          <img
+            src="pic/bou.png"
+            alt="Custom Flower Bouquets"
+            class="w-full sm:h-40 h-24 object-cover rounded"
+          />
+          <h4 class="sm:text-lg text-sm font-semibold mt-2">
+            Custom Flower Bouquets
+          </h4>
+          <p class="sm:text-sm text-[10px] text-gray-500">
+            Lotus, Peonies, Mixed Flowers
+          </p>
+          <p class="text-gray-700 sm:text-sm text-[10px] mt-1">
+            Designed for gifts, love, and appreciation.
+          </p>
+        </a>
+
+        <!-- Service Card 4: Home & Office Decoration -->
+        <a
+          class="bg-[#ffffff80] p-4 rounded-lg shadow transition-all duration-300 hover:shadow-xl hover:rotate-1 hover:scale-[1.02]"
+        >
+          <img
+            src="pic/home.jpg"
+            alt="Flower Decoration for Home & Office"
+            class="w-full sm:h-40 h-24 object-cover rounded"
+          />
+          <h4 class="sm:text-lg text-sm font-semibold mt-2">
+            Home & Office Decoration
+          </h4>
+          <p class="sm:text-sm text-[10px] text-gray-500">
+            Sakura, Indoor Plants, Seasonal Flowers
+          </p>
+          <p class="text-gray-700 sm:text-sm text-[10px] mt-1">
+            Bring freshness and beauty to your living or work space.
+          </p>
+        </a>
+        <!-- Service Card 5: Subscription Flower Service -->
+        <a
+          class="bg-[#ffffff80] p-4 rounded-lg shadow transition-all duration-300 hover:shadow-xl hover:-rotate-1 hover:scale-[1.02]"
+        >
+          <img
+            src="pic/sub.jpg"
+            alt="Flower Subscription Service"
+            class="w-full sm:h-40 h-24 object-cover rounded"
+          />
+          <h4 class="sm:text-lg text-sm font-semibold mt-2">
+            Flower Subscription Service
+          </h4>
+          <p class="sm:text-sm text-[10px] text-gray-500">
+            Weekly Fresh Bouquets
+          </p>
+          <p class="text-gray-700 sm:text-sm text-[10px] mt-1">
+            Enjoy regular flower deliveries to your door for home or office.
+          </p>
+        </a>
+
+        <!-- Service Card 6: Sympathy & Funeral Flowers -->
+        <a
+          class="bg-[#ffffff80] p-4 rounded-lg shadow transition-all duration-300 hover:shadow-xl hover:rotate-1 hover:scale-[1.02]"
+        >
+          <img
+            src="pic/fuu.jpg"
+            alt="Sympathy & Funeral Flowers"
+            class="w-full sm:h-40 h-24 object-cover rounded"
+          />
+          <h4 class="sm:text-lg text-sm font-semibold mt-2">
+            Sympathy & Funeral Flowers
+          </h4>
+          <p class="sm:text-sm text-[10px] text-gray-500">
+            White Lilies, Wreaths
+          </p>
+          <p class="text-gray-700 sm:text-sm text-[10px] mt-1">
+            Elegant and respectful floral tributes for memorial services.
+          </p>
+        </a>
+
+        <!-- Service Card 7: Grand Opening Decorations -->
+        <a
+          class="bg-[#ffffff80] p-4 rounded-lg shadow transition-all duration-300 hover:shadow-xl hover:-rotate-1 hover:scale-[1.02]"
+        >
+          <img
+            src="pic/grand.jpg"
+            alt="Grand Opening Flower Setup"
+            class="w-full sm:h-40 h-24 object-cover rounded"
+          />
+          <h4 class="sm:text-lg text-sm font-semibold mt-2">
+            Grand Opening Flower Setup
+          </h4>
+          <p class="sm:text-sm text-[10px] text-gray-500">
+            Banners, Floral Stands
+          </p>
+          <p class="text-gray-700 sm:text-sm text-[10px] mt-1">
+            Eye-catching flower arrangements to celebrate new beginnings.
+          </p>
+        </a>
       </div>
-    </div>
-
-    <footer class="bg-pink-50 mt-16 maxWidth">
+    </section>
+    <footer class="bg-pink-200 maxWidth">
       <div
-        class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm text-gray-700"
+        class="max-w-7xl mx-auto sm:px-4 sm:py-10 grid grid-cols-4 gap-1 sm:gap-8 text-sm text-gray-700"
       >
         <!-- About -->
         <div>
-          <h4 class="font-semibold text-gray-900 mb-3">About VATH Flowers</h4>
-          <p>
+          <h4
+            class="font-semibold mt-3 sm:text-sm text-[8px] text-gray-900 mb-[1px] sm:mb-3 leading-[1.1]"
+          >
+            VATHDAFAQ Flowers
+          </h4>
+          <p
+            class="text-[8px] hidden sm:block sm:text-[13px] space-y-[0.3px] leading-[1.1] sm:leading-[1.5]"
+          >
             We bring you the finest selection of flowers from Cambodia and
             around the world. Every petal tells a story of love, elegance, and
             tradition.
+          </p>
+          <p class="block sm:hidden text-[5px] leading-[1.1]">
+            Bring back your Fav flower
           </p>
         </div>
 
         <!-- Categories -->
         <div>
-          <h4 class="font-semibold text-gray-900 mb-3">Categories</h4>
-          <ul class="space-y-2">
+          <h4
+            class="font-semibold sm:text-sm text-[8px] text-gray-900 mb-[1px] sm:mb-3"
+          >
+            Categories
+          </h4>
+          <ul class="text-[5px] sm:text-[13px] sm:leading-[1.5] leading-[1.2]">
             <li>
-              <a href="#" class="hover:text-pink-600 transition"
+              <a
+                href="flowerType/khmer.html"
+                class="hover:text-pink-600 transition"
                 >Khmer Flowers</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-pink-600 transition"
+              <a
+                href="flowerType/eu.html"
+                class="hover:text-pink-600 transition"
                 >European Flowers</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-pink-600 transition"
+              <a
+                href="flowerType/asia.html"
+                class="hover:text-pink-600 transition"
                 >Asian Flowers</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-pink-600 transition"
+              <a
+                href="flowerType/japan.html"
+                class="hover:text-pink-600 transition"
                 >Japanese Flowers</a
               >
             </li>
@@ -170,11 +505,27 @@
 
         <!-- Useful Links -->
         <div>
-          <h4 class="font-semibold text-gray-900 mb-3">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:text-pink-600 transition">Home</a></li>
-            <li><a href="#" class="hover:text-pink-600 transition">Shop</a></li>
-            <li><a href="#" class="hover:text-pink-600 transition">FAQ</a></li>
+          <h4
+            class="font-semibold sm:text-sm text-[8px] text-gray-900 mb-[1px] sm:mb-3"
+          >
+            Quick Links
+          </h4>
+          <ul class="text-[5px] sm:text-[13px] sm:leading-[1.5] leading-[1.2]">
+            <li>
+              <a href="index.html" class="hover:text-pink-600 transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="shop.html" class="hover:text-pink-600 transition"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-pink-600 transition"
+                >FAQ</a
+              >
+            </li>
             <li>
               <a href="#" class="hover:text-pink-600 transition">My Account</a>
             </li>
@@ -183,21 +534,28 @@
 
         <!-- Social -->
         <div>
-          <h4 class="font-semibold text-gray-900 mb-3">Follow Us</h4>
-          <div class="flex space-x-4">
+          <h4
+            class="font-semibold sm:text-sm text-[8px] text-gray-900 mb-[1px] sm:mb-3"
+          >
+            Follow Us
+          </h4>
+          <div class="flex space-x-1 text-[5px] sm:text-[13px]">
             <a href="#" class="hover:text-pink-600 transition">Facebook</a>
             <a href="#" class="hover:text-pink-600 transition">Instagram</a>
             <a href="#" class="hover:text-pink-600 transition">TikTok</a>
           </div>
         </div>
       </div>
+    </footer>
 
+    <!-- Footer -->
+    <footer class="bg-pink-400 shadow maxWidth">
       <div
-        class="border-t border-gray-200 text-center text-sm text-gray-500 py-4"
+        class="max-w-6xl flex justify-center items-center text-[5px] mx-auto sm:px-4 sm:py-2 text-center sm:text-sm text-gray-600"
       >
-        &copy; 2025 NORVATH Flowers. All rights reserved.
+        © 2025 VATHDAFAQ. All rights reserved.
       </div>
     </footer>
-    <script src="cart.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
